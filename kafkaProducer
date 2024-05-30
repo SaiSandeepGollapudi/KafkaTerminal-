@@ -1,0 +1,206 @@
+Last login: Thu May 30 10:55:49 on ttys010
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh
+Create, delete, describe, or change a topic.
+Option                                   Description                            
+------                                   -----------                            
+--alter                                  Alter the number of partitions and     
+                                           replica assignment. Update the       
+                                           configuration of an existing topic   
+                                           via --alter is no longer supported   
+                                           here (the kafka-configs CLI supports 
+                                           altering topic configs with a --     
+                                           bootstrap-server option).            
+--at-min-isr-partitions                  if set when describing topics, only    
+                                           show partitions whose isr count is   
+                                           equal to the configured minimum.     
+--bootstrap-server <String: server to    REQUIRED: The Kafka server to connect  
+  connect to>                              to.                                  
+--command-config <String: command        Property file containing configs to be 
+  config property file>                    passed to Admin Client. This is used 
+                                           only with --bootstrap-server option  
+                                           for describing and altering broker   
+                                           configs.                             
+--config <String: name=value>            A topic configuration override for the 
+                                           topic being created. The following   
+                                           is a list of valid configurations:   
+                                         	cleanup.policy                        
+                                         	compression.type                      
+                                         	delete.retention.ms                   
+                                         	file.delete.delay.ms                  
+                                         	flush.messages                        
+                                         	flush.ms                              
+                                         	follower.replication.throttled.       
+                                           replicas                             
+                                         	index.interval.bytes                  
+                                         	leader.replication.throttled.replicas 
+                                         	local.retention.bytes                 
+                                         	local.retention.ms                    
+                                         	max.compaction.lag.ms                 
+                                         	max.message.bytes                     
+                                         	message.downconversion.enable         
+                                         	message.format.version                
+                                         	message.timestamp.after.max.ms        
+                                         	message.timestamp.before.max.ms       
+                                         	message.timestamp.difference.max.ms   
+                                         	message.timestamp.type                
+                                         	min.cleanable.dirty.ratio             
+                                         	min.compaction.lag.ms                 
+                                         	min.insync.replicas                   
+                                         	preallocate                           
+                                         	remote.storage.enable                 
+                                         	retention.bytes                       
+                                         	retention.ms                          
+                                         	segment.bytes                         
+                                         	segment.index.bytes                   
+                                         	segment.jitter.ms                     
+                                         	segment.ms                            
+                                         	unclean.leader.election.enable        
+                                         See the Kafka documentation for full   
+                                           details on the topic configs. It is  
+                                           supported only in combination with --
+                                           create if --bootstrap-server option  
+                                           is used (the kafka-configs CLI       
+                                           supports altering topic configs with 
+                                           a --bootstrap-server option).        
+--create                                 Create a new topic.                    
+--delete                                 Delete a topic                         
+--delete-config <String: name>           A topic configuration override to be   
+                                           removed for an existing topic (see   
+                                           the list of configurations under the 
+                                           --config option). Not supported with 
+                                           the --bootstrap-server option.       
+--describe                               List details for the given topics.     
+--exclude-internal                       exclude internal topics when running   
+                                           list or describe command. The        
+                                           internal topics will be listed by    
+                                           default                              
+--help                                   Print usage information.               
+--if-exists                              if set when altering or deleting or    
+                                           describing topics, the action will   
+                                           only execute if the topic exists.    
+--if-not-exists                          if set when creating topics, the       
+                                           action will only execute if the      
+                                           topic does not already exist.        
+--list                                   List all available topics.             
+--partitions <Integer: # of partitions>  The number of partitions for the topic 
+                                           being created or altered (WARNING:   
+                                           If partitions are increased for a    
+                                           topic that has a key, the partition  
+                                           logic or ordering of the messages    
+                                           will be affected). If not supplied   
+                                           for create, defaults to the cluster  
+                                           default.                             
+--replica-assignment <String:            A list of manual partition-to-broker   
+  broker_id_for_part1_replica1 :           assignments for the topic being      
+  broker_id_for_part1_replica2 ,           created or altered.                  
+  broker_id_for_part2_replica1 :                                                
+  broker_id_for_part2_replica2 , ...>                                           
+--replication-factor <Integer:           The replication factor for each        
+  replication factor>                      partition in the topic being         
+                                           created. If not supplied, defaults   
+                                           to the cluster default.              
+--topic <String: topic>                  The topic to create, alter, describe   
+                                           or delete. It also accepts a regular 
+                                           expression, except for --create      
+                                           option. Put topic name in double     
+                                           quotes and use the '\' prefix to     
+                                           escape regular expression symbols; e.
+                                           g. "test\.topic".                    
+--topic-id <String: topic-id>            The topic-id to describe.This is used  
+                                           only with --bootstrap-server option  
+                                           for describing topics.               
+--topics-with-overrides                  if set when describing topics, only    
+                                           show topics that have overridden     
+                                           configs                              
+--unavailable-partitions                 if set when describing topics, only    
+                                           show partitions whose leader is not  
+                                           available                            
+--under-min-isr-partitions               if set when describing topics, only    
+                                           show partitions whose isr count is   
+                                           less than the configured minimum.    
+--under-replicated-partitions            if set when describing topics, only    
+                                           show under replicated partitions     
+--version                                Display Kafka version.                 
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka-topics.sh --bootstrap-server localhost:9092 --list 
+-bash: kafka-topics.sh: command not found
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ bin/kafka-topics.sh --bootstrap-server localhost:9092 --list 
+-bash: bin/kafka-topics.sh: No such file or directory
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list 
+
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --create
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic first_topic.
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka-topics.sh --bootstrap-server localhost:9092 --topic second_topic --create --partitions 3
+-bash: kafka-topics.sh: command not found
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --topic second_topic --create --partitions 3
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic second_topic.
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka-topics.sh --bootstrap-server localhost:9092 --topic third_topic --create --partitions 3 --replication-factor 2
+-bash: kafka-topics.sh: command not found
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --topic third_topic --create --partitions 3 --replication-factor 2
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Error while executing topic command : Replication factor: 2 larger than available brokers: 1.
+[2024-05-30 11:50:38,766] ERROR org.apache.kafka.common.errors.InvalidReplicationFactorException: Replication factor: 2 larger than available brokers: 1.
+ (org.apache.kafka.tools.TopicCommand)
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --topic third_topic --create --partitions 3 --replication-factor 1
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic third_topic.
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list 
+first_topic
+second_topic
+third_topic
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --describe
+Topic: first_topic	TopicId: L2J3VRHFSBmr8oMgU1QjSQ	PartitionCount: 1	ReplicationFactor: 1	Configs: 
+	Topic: first_topic	Partition: 0	Leader: 0	Replicas: 0	Isr: 0
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --delete
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --create --partitions 1
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic first_topic.
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic first_topic 
+>Hello World
+>My name is sai
+>^C(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic new_topic
+>hello
+[2024-05-30 12:17:23,469] WARN [Producer clientId=console-producer] Error while fetching metadata with correlation id 5 : {new_topic=LEADER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient)
+[2024-05-30 12:17:23,617] WARN [Producer clientId=console-producer] Error while fetching metadata with correlation id 6 : {new_topic=LEADER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient)
+>kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+>;
+> Sais-MacBook-Air:~ SandeepGollapudi$
+>^C(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+first_topic
+new_topic
+second_topic
+third_topic
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ 
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --topic new_topic --describe
+
+Topic: new_topic	TopicId: 8UThhfEOTMSOknTXbSDSAg	PartitionCount: 1	ReplicationFactor: 1	Configs: 
+	Topic: new_topic	Partition: 0	Leader: 0	Replicas: 0	Isr: 0
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ 
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic new_topic_2
+>kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+[2024-05-30 12:31:51,006] WARN [Producer clientId=console-producer] Error while fetching metadata with correlation id 5 : {new_topic_2=LEADER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient)
+[2024-05-30 12:31:51,143] WARN [Producer clientId=console-producer] Error while fetching metadata with correlation id 6 : {new_topic_2=LEADER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient)
+>kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+>^C(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+first_topic
+new_topic
+new_topic_2
+second_topic
+third_topic
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --topic new_topic_2 --describe
+Topic: new_topic_2	TopicId: KIiiRCJdRXeeHWGNNrsheg	PartitionCount: 1	ReplicationFactor: 1	Configs: 
+	Topic: new_topic_2	Partition: 0	Leader: 0	Replicas: 0	Isr: 0
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic first_topic --property parse.key=true --property key.separator=:
+>>example key:example value
+>example key:example value
+>name:sai
+>^C(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --describe
+Topic: first_topic	TopicId: 8xIwNaYBQfuKKFMFl_B9gw	PartitionCount: 1	ReplicationFactor: 1	Configs: 
+	Topic: first_topic	Partition: 0	Leader: 0	Replicas: 0	Isr: 0
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ 
