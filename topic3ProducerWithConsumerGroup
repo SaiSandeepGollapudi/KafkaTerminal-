@@ -1,0 +1,22 @@
+Last login: Thu May 30 15:38:39 on ttys004
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --producer-property partitioner.class=org.apache.kafka.clients.producer.RoundRobinPartitioner --topic third_topic
+>a
+>b
+>c
+>d 
+>e
+>f
+>g
+>
+
+
+
+
+
+
+
+
