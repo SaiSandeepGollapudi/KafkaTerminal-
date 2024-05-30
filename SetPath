@@ -1,0 +1,48 @@
+Last login: Thu May 30 10:42:14 on ttys007
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ nano .zshrc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  UW PICO 5.09                      File: .zshrc                      Modified  
+
+PATH="$PATH:/Users/SandeepGollapudi/kafka_2.13-3.7.0/bin"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/SandeepGollapudi/opt/anaconda3/bin/conda' 'shell.zsh' $
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/SandeepGollapudi/opt/anaconda3/etc/profile.d/conda.sh" ]; t$
+        . "/Users/SandeepGollapudi/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/SandeepGollapudi/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+
+
+
+^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Pg   ^K Cut Text  ^C Cur Pos   
+^X Exit      ^J Justify   ^W Where is  ^V Next Pg   ^U UnCut Text^T To Spell  
