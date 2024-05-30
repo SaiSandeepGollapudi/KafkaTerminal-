@@ -1,0 +1,29 @@
+Last login: Thu May 30 12:39:29 on ttys009
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ onsole-producer.sh --bootstrap-server localhost:9092 --producer-property partitioner.class=org.apache.kafka.clients.producer.RoundRobinPartitioner --topic second_topic
+-bash: onsole-producer.sh: command not found
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ >^C(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --producer-property partitioner.class=org.apache.kafka.clients.producer.RounbinPartitioner --topic second_topic
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic second_topic --from-beginning
+hello
+two
+one
+last
+name is sai
+three
+four
+five 
+six
+	kafka_2.13-3.7.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic second_topic
+^CProcessed a total of 9 messages
+
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ 
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic second_topic
+seven                                                                         ` eight                                                        
+q
+a
+c
+b
+

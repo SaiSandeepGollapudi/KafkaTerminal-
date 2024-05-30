@@ -1,0 +1,53 @@
+Last login: Thu May 30 11:40:19 on ttys011
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka-topics.sh --bootstrap-server localhost:9092 --topic third_topic --create --partitions 3
+-bash: kafka-topics.sh: command not found
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-topics.sh --bootstrap-server localhost:9092 --topic third_topic --create --partitions 3
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Error while executing topic command : Topic 'third_topic' already exists.
+[2024-05-30 12:40:42,409] ERROR org.apache.kafka.common.errors.TopicExistsException: Topic 'third_topic' already exists.
+ (org.apache.kafka.tools.TopicCommand)
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic third_topic --group my-first-application
+kafka_2.13-3.7.0/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --producer-property partitioner.class=org.apache.kafka.clients.producer.RoundRobinPartitioner --topic third_topic
+
+^CProcessed a total of 0 messages
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ 
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic third_topic --group my-first-application
+
+^CProcessed a total of 0 messages
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ 
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --producer-property partitioner.class=org.apache.kafka.clients.producer.RoundRobinPartitioner --topic third_topic
+>kafka_2.13-3.7.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic third_topic --group my-first-application
+>kafka_2.13-3.7.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic third_topic --group my-second-application --from-beginning
+>kafka_2.13-3.7.0/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --producer-property partitioner.class=org.apache.kafka.clients.producer.RoundRobinPartitioner --topic second_topic
+>^C(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --producer-property partitioner.class=org.apache.kafka.clients.producer.RounbinPartitioner --topic second_topic
+>hello
+>name is sai
+>one
+>two
+>three
+>last
+>four
+>five 
+>six
+>seven
+>eight
+>q
+>a
+>b
+>c
+>   
+
+
+
+
+
+
+
+
+
+
+
