@@ -1,0 +1,23 @@
+Last login: Fri May 31 11:58:29 on ttys007
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic demo_java --from-beginning
+
+hello world
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
