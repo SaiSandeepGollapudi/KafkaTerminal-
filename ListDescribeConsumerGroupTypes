@@ -1,0 +1,47 @@
+Last login: Thu May 30 16:10:55 on ttys010
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+my-first-application
+console-consumer-73914
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+my-first-application
+console-consumer-73914
+my-second-application
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-second-application
+
+GROUP                 TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                           HOST            CLIENT-ID
+my-second-application third_topic     0          5               5               0               console-consumer-5db6c1e9-d83a-4694-ba3c-9fc0e043bf75 /127.0.0.1      console-consumer
+my-second-application third_topic     1          5               5               0               console-consumer-5db6c1e9-d83a-4694-ba3c-9fc0e043bf75 /127.0.0.1      console-consumer
+my-second-application third_topic     2          6               6               0               console-consumer-5db6c1e9-d83a-4694-ba3c-9fc0e043bf75 /127.0.0.1      console-consumer
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
+
+GROUP                TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                           HOST            CLIENT-ID
+my-first-application third_topic     0          5               5               0               console-consumer-944c9e09-0ac3-496e-b5b7-69b8f8be40c9 /127.0.0.1      console-consumer
+my-first-application third_topic     1          5               5               0               console-consumer-944c9e09-0ac3-496e-b5b7-69b8f8be40c9 /127.0.0.1      console-consumer
+my-first-application third_topic     2          6               6               0               console-consumer-9866adc1-a00c-41d4-a58e-541c156e1e78 /127.0.0.1      console-consumer
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
+
+GROUP                TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                           HOST            CLIENT-ID
+my-first-application third_topic     0          6               6               0               console-consumer-944c9e09-0ac3-496e-b5b7-69b8f8be40c9 /127.0.0.1      console-consumer
+my-first-application third_topic     1          6               6               0               console-consumer-944c9e09-0ac3-496e-b5b7-69b8f8be40c9 /127.0.0.1      console-consumer
+my-first-application third_topic     2          8               8               0               console-consumer-9866adc1-a00c-41d4-a58e-541c156e1e78 /127.0.0.1      console-consumer
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
+
+GROUP                TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                           HOST            CLIENT-ID
+my-first-application third_topic     0          7               7               0               console-consumer-944c9e09-0ac3-496e-b5b7-69b8f8be40c9 /127.0.0.1      console-consumer
+my-first-application third_topic     1          7               7               0               console-consumer-944c9e09-0ac3-496e-b5b7-69b8f8be40c9 /127.0.0.1      console-consumer
+my-first-application third_topic     2          9               9               0               console-consumer-9866adc1-a00c-41d4-a58e-541c156e1e78 /127.0.0.1      console-consumer
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group console-consumer-10592
+-bash: kafka-consumer-groups.sh: command not found
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group console-consumer-73914
+-bash: kafka-consumer-groups.sh: command not found
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group console-consumer-73914
+
+GROUP                  TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                           HOST            CLIENT-ID
+console-consumer-73914 second_topic    0          -               5               -               console-consumer-b1e3c8d2-0ac2-405c-b2c0-b3d4c25580b0 /127.0.0.1      console-consumer
+console-consumer-73914 second_topic    1          -               5               -               console-consumer-b1e3c8d2-0ac2-405c-b2c0-b3d4c25580b0 /127.0.0.1      console-consumer
+console-consumer-73914 second_topic    2          -               5               -               console-consumer-b1e3c8d2-0ac2-405c-b2c0-b3d4c25580b0 /127.0.0.1      console-consumer
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ 
