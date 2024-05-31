@@ -1,0 +1,94 @@
+Last login: Thu May 30 16:18:08 on ttys012
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
+-bash: kafka-consumer-groups.sh: command not found
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
+
+GROUP                TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                           HOST            CLIENT-ID
+my-first-application third_topic     0          7               7               0               console-consumer-944c9e09-0ac3-496e-b5b7-69b8f8be40c9 /127.0.0.1      console-consumer
+my-first-application third_topic     1          7               7               0               console-consumer-944c9e09-0ac3-496e-b5b7-69b8f8be40c9 /127.0.0.1      console-consumer
+my-first-application third_topic     2          9               9               0               console-consumer-9866adc1-a00c-41d4-a58e-541c156e1e78 /127.0.0.1      console-consumer
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
+
+Consumer group 'my-first-application' has no active members.
+
+GROUP                TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+my-first-application third_topic     0          7               9               2               -               -               -
+my-first-application third_topic     1          7               9               2               -               -               -
+my-first-application third_topic     2          9               11              2               -               -               -
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
+
+Consumer group 'my-first-application' has no active members.
+
+GROUP                TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+my-first-application third_topic     0          7               11              4               -               -               -
+my-first-application third_topic     1          7               10              3               -               -               -
+my-first-application third_topic     2          9               12              3               -               -               -
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --to-earliest --topic third_topic --dry-run
+
+GROUP                          TOPIC                          PARTITION  NEW-OFFSET     
+my-first-application           third_topic                    0          0              
+my-first-application           third_topic                    1          0              
+my-first-application           third_topic                    2          0              
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --to-earliest --topic third_topic --execute
+
+GROUP                          TOPIC                          PARTITION  NEW-OFFSET     
+my-first-application           third_topic                    0          0              
+my-first-application           third_topic                    1          0              
+my-first-application           third_topic                    2          0              
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
+
+Consumer group 'my-first-application' has no active members.
+
+GROUP                TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+my-first-application third_topic     0          0               11              11              -               -               -
+my-first-application third_topic     1          0               10              10              -               -               -
+my-first-application third_topic     2          0               12              12              -               -               -
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic third_topic --group my-first-application
+kafka_2.13-3.7.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic third_topic --group my-first-application
+a
+d
+g
+j
+m
+n
+q
+t
+w
+z
+c
+kafka_2.13-3.7.0/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --producer-property partitioner.class=org.apache.kafka.clients.producer.RoundRobinPartitioner --topic second_topic
+c
+f
+i
+l
+p
+s
+v
+y
+b
+kafka_2.13-3.7.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic third_topic --group my-second-application --from-beginning
+b
+e
+h
+k
+o
+r
+u
+x
+a
+d
+kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
+^CProcessed a total of 33 messages
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ kafka_2.13-3.7.0/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
+
+Consumer group 'my-first-application' has no active members.
+
+GROUP                TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+my-first-application third_topic     0          11              11              0               -               -               -
+my-first-application third_topic     1          10              10              0               -               -               -
+my-first-application third_topic     2          12              12              0               -               -               -
+(base) Sais-MacBook-Air:~ SandeepGollapudi$ 
